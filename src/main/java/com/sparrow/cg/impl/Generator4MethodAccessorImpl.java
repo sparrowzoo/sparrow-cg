@@ -95,7 +95,7 @@ public class Generator4MethodAccessorImpl implements Generator4MethodAccessor {
             + setJavaSource.toString() + "}";
         logger.debug(sourceCode);
         try {
-            return (MethodAccessor) DynamicEngine
+            return (MethodAccessor) DynamicCompiler
                 .getInstance().sourceToObject(
                     PACKAGE_NAME + "." + methodAccessorClassName,
                     sourceCode);

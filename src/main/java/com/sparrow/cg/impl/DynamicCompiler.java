@@ -42,14 +42,14 @@ import org.slf4j.LoggerFactory;
 /**
  * @author harry
  */
-public class DynamicEngine {
-    private static Logger logger = LoggerFactory.getLogger(DynamicEngine.class);
+public class DynamicCompiler {
+    private static Logger logger = LoggerFactory.getLogger(DynamicCompiler.class);
 
-    private static DynamicEngine ourInstance = new DynamicEngine();
+    private static DynamicCompiler ourInstance = new DynamicCompiler();
 
     private String encoding;
 
-    public static DynamicEngine getInstance() {
+    public static DynamicCompiler getInstance() {
         return ourInstance;
     }
 
@@ -57,7 +57,7 @@ public class DynamicEngine {
 
     private String classpath;
 
-    private DynamicEngine() {
+    private DynamicCompiler() {
         this.classLoader = (URLClassLoader) this.getClass().getClassLoader();
         this.encoding = Config.getValue(CONFIG.COMPILER_OPTION_ENCODING);
         if (StringUtility.isNullOrEmpty(this.encoding)) {
