@@ -181,15 +181,6 @@ public class DynamicCompiler {
     }
 
     private String compilePrint(Diagnostic<?> diagnostic) {
-        logger.info("Code:" + diagnostic.getCode());
-        logger.info("Kind:" + diagnostic.getKind());
-        logger.info("Position:" + diagnostic.getPosition());
-        logger.info("Start Position:" + diagnostic.getStartPosition());
-        logger.info("End Position:" + diagnostic.getEndPosition());
-        logger.info("Source:" + diagnostic.getSource());
-        logger.info("Message:" + diagnostic.getMessage(null));
-        logger.info("LineNumber:" + diagnostic.getLineNumber());
-        logger.info("ColumnNumber:" + diagnostic.getColumnNumber());
         StringBuilder res = new StringBuilder();
         res.append("Code:[" + diagnostic.getCode() + "]\n");
         res.append("Kind:[" + diagnostic.getKind() + "]\n");
@@ -200,6 +191,7 @@ public class DynamicCompiler {
         res.append("Message:[" + diagnostic.getMessage(null) + "]\n");
         res.append("LineNumber:[" + diagnostic.getLineNumber() + "]\n");
         res.append("ColumnNumber:[" + diagnostic.getColumnNumber() + "]\n");
+        logger.info(res.toString());
         return res.toString();
     }
 }
