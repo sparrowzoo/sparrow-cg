@@ -100,7 +100,7 @@ public class Generator4MethodAccessorImpl implements Generator4MethodAccessor {
                     PACKAGE_NAME + "." + methodAccessorClassName,
                     sourceCode);
         } catch (Exception e) {
-            logger.error("DynamicEngine get sourceToObject error", e);
+            logger.error("DynamicCompiler get sourceToObject error", e);
         }
         return null;
     }
