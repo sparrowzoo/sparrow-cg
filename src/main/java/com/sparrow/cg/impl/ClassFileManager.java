@@ -27,13 +27,13 @@ import java.io.IOException;
  * @author harry
  */
 public class ClassFileManager extends ForwardingJavaFileManager {
-    public JavaClassFileObject getJavaClassObject() {
+    JavaClassFileObject getJavaClassObject() {
         return javaClassFileObject;
     }
 
     private JavaClassFileObject javaClassFileObject;
 
-    public ClassFileManager(StandardJavaFileManager standardManager) {
+    ClassFileManager(StandardJavaFileManager standardManager) {
         super(standardManager);
     }
 

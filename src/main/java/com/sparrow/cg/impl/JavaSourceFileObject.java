@@ -27,7 +27,7 @@ import java.net.URI;
 public class JavaSourceFileObject extends SimpleJavaFileObject {
     private CharSequence content;
 
-    public JavaSourceFileObject(String className, CharSequence content) {
+    JavaSourceFileObject(String className, CharSequence content) {
         super(URI.create("string:///" + className.replace('.', '/')
                 + JavaFileObject.Kind.SOURCE.extension),
             JavaFileObject.Kind.SOURCE);

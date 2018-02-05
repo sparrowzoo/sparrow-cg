@@ -29,15 +29,15 @@ import java.net.URI;
  */
 public class JavaClassFileObject extends SimpleJavaFileObject {
 
-    protected final ByteArrayOutputStream bos =
-        new ByteArrayOutputStream();
+    final ByteArrayOutputStream bos =
+            new ByteArrayOutputStream();
 
-    public JavaClassFileObject(String name, JavaFileObject.Kind kind) {
+    JavaClassFileObject(String name, JavaFileObject.Kind kind) {
         super(URI.create("string:///" + name.replace('.', '/')
-            + kind.extension), kind);
+                + kind.extension), kind);
     }
 
-    public byte[] getBytes() {
+    byte[] getBytes() {
         return bos.toByteArray();
     }
 

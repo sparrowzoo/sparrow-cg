@@ -25,7 +25,7 @@ import java.net.URLClassLoader;
  * @author harry
  */
 public class DynamicClassLoader extends URLClassLoader {
-    public DynamicClassLoader(ClassLoader classLoader) {
+    DynamicClassLoader(ClassLoader classLoader) {
         super(new URL[DIGIT.ZERO], classLoader);
     }
 
@@ -34,7 +34,7 @@ public class DynamicClassLoader extends URLClassLoader {
         return this.findClass(className);
     }
 
-    public Class<?> loadClass(String fullName, JavaClassFileObject jco) {
+    Class<?> loadClass(String fullName, JavaClassFileObject jco) {
         byte[] classData = jco.getBytes();
         return this.defineClass(fullName, classData, DIGIT.ZERO, classData.length);
     }
